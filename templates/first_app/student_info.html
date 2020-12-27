@@ -4,6 +4,17 @@
 
 {% block body_block %}
     
-Student Info
+<div class="card m-4">
+    <div class="card-header">Student Information</div>
+
+    <div class="card-body">
+    <h5 class="card-title">{{student_info.name}}'s Information</h5>
+    <p class="card-text">Age: {{ student_info.age }}</p>
+    <p class="card-text">Dept: {{ student_info.dept }}</p>
+    <p class="card-text">Email: {{ student_info.email }}</p>
+    <a href="{% url 'first_app:update_info' student_id=student_info.id %}" class="mt-3 btn btn-primary">Update</a>
+    <a href="{% url 'first_app:delete_info' student_id=student_info.id %}" class="mt-3 btn btn-danger">Delele</a>
+    </div>
+</div>
 {% endblock body_block %}
     

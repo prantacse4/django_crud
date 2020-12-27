@@ -4,7 +4,17 @@
 
 {% block body_block %}
 
-StudentForm
+<div class="card">
+    <div class="card-body">
+        <h1>Student Form</h1>
+        <form action="" method="POST">
+            {{ student_form.as_p }}
+            {% csrf_token %}
+
+            <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>
     
 {% endblock body_block %}
     

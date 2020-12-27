@@ -6,7 +6,7 @@
 
 <div class="card">
     <div class="card-body">
-      <h4 class="card-title text-left">Students <span><button class="btn btn-success text-right">Add New</button></span></h4>
+      <h4 class="card-title text-left">Students <span><a href="{% url 'first_app:student_form' %}" class="btn btn-success text-right">Add New</a></span></h4>
 
       {% if student_list %}
 
@@ -16,6 +16,7 @@
           <th>Age</th>
           <th>Dept</th>
           <th>Email</th>
+          <th>Action</th>
           </tr>
 
           
@@ -26,6 +27,7 @@
                 <td>{{ student_list.age }}</td>
                 <td>{{ student_list.dept }}</td>
                 <td>{{ student_list.email }}</td>
+                <td><a href="{% url 'first_app:student_info' student_id=student_list.id %}" class="btn btn-danger">Info</a></td>
             </tr>
           {% endfor %}
               
@@ -41,6 +43,12 @@
           {% endif %}
 
     </div>
+
+    
+    {% if mgs %}
+        {{ mgs }}
+    {% endif %}
+        
   </div>
 
     
